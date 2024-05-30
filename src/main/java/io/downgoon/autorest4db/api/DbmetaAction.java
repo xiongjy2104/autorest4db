@@ -1,6 +1,6 @@
 package io.downgoon.autorest4db.api;
 
-import java.util.Set;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +22,7 @@ public class DbmetaAction {
 
 		JsonObject json = new JsonObject(); // response
 		int failCount = 0;
-		Set<FileUpload> uploads = routingContext.fileUploads();
+		List<FileUpload> uploads = routingContext.fileUploads();
 		for (FileUpload fupload : uploads) {
 
 			LOG.info("db: {}, fileName: {}, uploadedFileName: {}, size: {}", dbName, fupload.fileName(),
