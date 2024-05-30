@@ -60,7 +60,7 @@ public class AutoRestMain {
 		dbmetaRouter.route(HttpMethod.POST, "/:dbname").handler(dbmetaAction::upload);
 
 		// handler all requests in RequestHandler
-		server.requestHandler(mainRouter::accept);
+		server.requestHandler(mainRouter);
 
 		int port = Integer.parseInt(System.getProperty("port", "8080"));
 		server.listen(port);
